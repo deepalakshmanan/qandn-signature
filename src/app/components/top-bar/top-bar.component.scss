@@ -1,0 +1,56 @@
+@use '../../../styles' as *;
+
+.top-bar{
+  background: $primary;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .offer{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      mat-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        color: #f8d568; // Soft gold
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: .3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}
+//mobile screen
+@media (max-width: 768px) {
+  .container{
+    justify-content: center !important;
+  }
+  .benefit{
+    display: none !important;
+  }
+  .action-btn{
+    display: none !important;
+  }
+}

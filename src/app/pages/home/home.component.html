@@ -1,0 +1,211 @@
+<section class="home">
+
+  <swiper-container
+    slides-per-view="1"
+    loop="true"
+    autoplay-delay="4000"
+    speed="800"
+    navigation="true"
+    pagination="true">
+
+    @for (slide of slides; track slide.image) {
+
+      <swiper-slide>
+
+        <section
+          class="hero"
+          [style.background-image]="'url(' + slide.image + ')'">
+
+          <div class="hero-content">
+
+            <span>NEW COLLECTION</span>
+
+            <h1>{{ slide.title }}</h1>
+
+            <p>{{ slide.subtitle }}</p>
+
+            <button>Shop Collection</button>
+
+          </div>
+
+        </section>
+
+      </swiper-slide>
+
+    }
+
+  </swiper-container>
+
+</section>
+<section class="category-section">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>OUR COLLECTIONS</span>
+      <h2>Shop by Category</h2>
+    </div>
+
+    <div class="category-grid">
+
+      @for(collection of collections; track collection.title){
+
+        <div class="category-card">
+
+          <div class="image">
+
+            <img
+              [src]="collection.image"
+              [alt]="collection.title">
+
+          </div>
+
+          <div class="content">
+
+            <h3>{{collection.title}}</h3>
+
+            <a href="#">
+              Explore
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<!--featured products-->
+<section class="featured-products">
+<div class="container">
+  <div class="section-header">
+    <div>
+      <span>Our Picks</span>
+      <h2>Signature Collections</h2>
+    </div>
+    <a href="#" class="view-all">
+      View All
+      <mat-icon>arrow_forward</mat-icon>
+    </a>
+  </div>
+  <div class="slider-wrapper">
+    <button class="nav prev" (click)="prevSlide()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <div class="slider">
+      <div
+        class="slider-track"
+        [style.transform]="'translateX(-' + currentIndex * 25 + '%)'">
+        @for(product of products; track product.id){
+          <div class="product-card">
+            <div class="product-image">
+              <img [src]="product.image" [alt]="product.name">
+              <button class="wishlist">
+                <mat-icon>favorite_border</mat-icon>
+              </button>
+
+              <span class="badge">New</span>
+
+            </div>
+            <div class="product-content">
+              <h3>{{product.name}}</h3>
+              <div class="rating">
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star_half</mat-icon>
+                <span>(25)</span>
+              </div>
+              <h4>₹{{product.price}}</h4>
+
+              <button class="cart-btn">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <button class="nav next" (click)="nextProductSlide()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+</section>
+<section class="subscribe">
+<div class="container">
+  <div class="subscribe-content">
+    <span>JOIN OUR COMMUNITY</span>
+    <h2>
+      Get 10% Off <br>On Your First Order
+    </h2>
+  </div>
+  <div class="subscribe-form">
+
+    <input
+      type="email"
+      placeholder="Enter your email address"/>
+    <button>
+      Subscribe
+    </button>
+
+  </div>
+  <div class="subscribe-image">
+
+    <img
+      src="assets/images/common/new%20model.png"
+      alt="Fashion Collection">
+
+  </div>
+</div>
+</section>
+<section class="points">
+  <div class="container">
+    <div class="point-card">
+      <div class="icon">
+        <mat-icon>local_shipping</mat-icon>
+      </div>
+      <div class="content">
+        <h4>FREE SHIPPING</h4>
+        <p>On orders above ₹1499</p>
+      </div>
+    </div>
+
+    <div class="point-card">
+      <div class="icon">
+        <mat-icon>published_with_changes</mat-icon>
+      </div>
+      <div class="content">
+        <h4>EASY RETURNS</h4>
+        <p>Hassle-free returns</p>
+      </div>
+    </div>
+
+    <div class="point-card">
+      <div class="icon">
+        <mat-icon>inventory_2</mat-icon>
+      </div>
+      <div class="content">
+        <h4>SECURE PAYMENT</h4>
+        <p>100% secure checkout</p>
+      </div>
+    </div>
+
+    <div class="point-card">
+      <div class="icon">
+        <mat-icon>support_agent</mat-icon>
+      </div>
+      <div class="content">
+        <h4>CUSTOMER SUPPORT</h4>
+        <p>We're here to help</p>
+      </div>
+    </div>
+  </div>
+</section>

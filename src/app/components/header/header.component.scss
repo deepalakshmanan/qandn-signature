@@ -1,0 +1,170 @@
+@use '../../../styles' as *;
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: $bg-color;
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+  .container{
+    max-width: 1200px;
+    margin: 8px auto;
+    padding: 0 24px;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .search-box {
+      position: relative;
+
+      input {
+        width: 240px;
+        height: 42px;
+        border: 1px solid $border-color;
+        border-radius: 25px;
+        padding: 0 45px 0 18px;
+        outline: none;
+        transition: 0.3s;
+
+        &:focus {
+          border-color: $primary;
+        }
+      }
+      .search-btn {
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        transform: translateY(-50%);
+
+        width: 36px;
+        height: 36px;
+
+        border: none;
+        border-radius: 50%;
+        background: $primary;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-50%) scale(1.05);
+          background: darken($primary, 8%);
+        }
+
+        .search-btn {
+          position: absolute;
+          top: 50%;
+          right: 6px;
+          transform: translateY(-50%);
+
+          width: 36px;
+          height: 36px;
+
+          border: none;
+          border-radius: 50%;
+          background: $primary;
+          color: #fff;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-50%) scale(1.05);
+            background: darken($primary, 8%);
+          }
+        }
+      }
+      mat-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        color: #f8d568; // Soft gold
+      }
+      i {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+      }
+    }
+  .search{
+    display: none;
+  }
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid $border-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: $primary;
+        color: white;
+        border-color: $primary;
+      }
+    }
+    .shopping{
+      position: relative;
+    }
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $primary;
+      color: white;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+//mobile screen
+@media (max-width: 768px) {
+  .container{
+    height: 50px !important;
+  }
+  .logo img{
+    width: 50px !important;
+  }
+  .search-box{
+    display: none;
+  }
+  .search{
+    display: block;
+  }
+}
