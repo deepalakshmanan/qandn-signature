@@ -128,15 +128,31 @@ export class HomeComponent {
   }
   // animation to hero section
   ngAfterViewInit() {
+    // const videos = document.querySelectorAll('video');
+    //
+    // videos.forEach((video, index) => {
+    //
+    //   video.currentTime = index * 1.5;
+    //
+    //   video.play();
+    //
+    // });
+
     const videos = document.querySelectorAll('video');
 
     videos.forEach((video, index) => {
 
+      video.muted = true;
+      video.playsInline = true;
+
       video.currentTime = index * 1.5;
 
-      video.play();
+      video.play().catch((err) => {
+        console.log(`Video ${index + 1} autoplay blocked`, err);
+      });
 
     });
+
 
     gsap.utils.toArray<HTMLElement>("section").forEach((section) => {
 
