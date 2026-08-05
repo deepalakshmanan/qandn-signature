@@ -1,0 +1,54 @@
+:host{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+}
+
+.butterfly-wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.butterfly{
+
+  position:absolute;
+
+  width:60px;
+
+  top:120px;
+
+  left:120px;
+
+  transform-origin:center center;
+
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.18));
+
+  animation: wingFlap .45s ease-in-out infinite;
+
+  will-change:transform;
+}
+
+@keyframes wingFlap{
+
+  0%{
+    transform:scale(1) rotate(-8deg);
+  }
+
+  50%{
+    transform:scale(.96) rotate(8deg);
+  }
+
+  100%{
+    transform:scale(1) rotate(-8deg);
+  }
+
+}
+#leftUpperWing,
+#rightUpperWing,
+#leftLowerWing,
+#rightLowerWing {
+  transform-box: fill-box;
+  transform-origin: center;
+}

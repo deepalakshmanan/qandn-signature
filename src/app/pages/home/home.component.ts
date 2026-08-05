@@ -1,10 +1,19 @@
-import { Component , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component , CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { ButterflyanimationComponent } from '../../components/butterflyanimation/butterflyanimation.component'
+
+import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {FitAssistantComponent} from '../../components/fit-assistant/fit-assistant.component';
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, ButterflyanimationComponent, FitAssistantComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -14,6 +23,11 @@ export class HomeComponent {
   currentSlide = 0;
   intervalId: any;
   productIntervalId: any;
+  showFitAssistant = false;
+
+  @Output() closeModal = new EventEmitter<void>();
+
+
 
   products  = [{
       id: 1,
@@ -101,6 +115,57 @@ export class HomeComponent {
     }
   ];
 
+  openFitAssistant() {
+    this.showFitAssistant = true;
+  }
+
+  closeFitAssistant() {
+    this.showFitAssistant = false;
+  }
+
+  close() {
+    this.closeModal.emit();
+  }
+  // animation to hero section
+  ngAfterViewInit() {
+    const videos = document.querySelectorAll('video');
+
+    videos.forEach((video, index) => {
+
+      video.currentTime = index * 1.5;
+
+      video.play();
+
+    });
+
+    gsap.utils.toArray<HTMLElement>("section").forEach((section) => {
+
+      gsap.from(section, {
+
+        opacity: 0,
+
+        y: 80,
+
+        duration: 3,
+
+        ease: "power3.out",
+
+        scrollTrigger: {
+
+          trigger: section,
+
+          start: "top 85%",
+
+          toggleActions: "play none none reverse"
+
+        }
+
+      });
+
+    });
+  }
+
+
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.nextSlide();
@@ -158,4 +223,5 @@ export class HomeComponent {
     }
 
   }
+
 }

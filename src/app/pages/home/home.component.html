@@ -1,47 +1,134 @@
-<section class="home">
+<div class="page-wrapper">
 
-  <swiper-container
-    slides-per-view="1"
-    loop="true"
-    autoplay-delay="4000"
-    speed="800"
-    navigation="true"
-    pagination="true">
+  <section>
+    <section class="home mobile-home fade-section">
 
-    @for (slide of slides; track slide.image) {
 
-      <swiper-slide>
 
-        <section
-          class="hero"
-          [style.background-image]="'url(' + slide.image + ')'">
 
-          <div class="hero-content">
+      <section
+        class="hero"
+        style="background-image: url('assets/images/common/banner.png');">
 
-            <span>NEW COLLECTION</span>
 
-            <h1>{{ slide.title }}</h1>
 
-            <p>{{ slide.subtitle }}</p>
+              <div class="hero-content">
 
-            <button>Shop Collection</button>
+                <span>NEW COLLECTION</span>
 
-          </div>
+                <h1>Effortless Style</h1>
 
-        </section>
+<!--                <p>{{ slide.subtitle }}</p>-->
 
-      </swiper-slide>
+                <button>Shop Collection</button>
 
-    }
+              </div>
 
-  </swiper-container>
+            </section>
 
-</section>
-<section class="category-section">
+
+
+
+
+
+    </section>
+    <section class="hero desktop-hero">
+
+      <!-- LEFT VIDEO -->
+      <div class="hero-left">
+
+        <video  class="desktop-media" #video1
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+          <source src="assets/videos/banner1.mp4" type="video/mp4">
+        </video>
+        <!-- Mobile Image -->
+        <img
+          class="mobile-media"
+          src="assets/images/common/banner.png"
+          alt="Luxury Collection">
+      </div>
+
+      <!-- RIGHT VIDEO -->
+      <div class="hero-right">
+
+        <video class="desktop-media" #video2
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto">
+
+          <source src="assets/videos/banner2.mp4" type="video/mp4">
+
+        </video>
+
+        <!-- Mobile Image -->
+        <img
+          class="mobile-media"
+          src="assets/images/common/banner2.png"
+          alt="Luxury Collection">
+
+      </div>
+
+      <!-- GOLD DIVIDER -->
+      <div class="divider">
+        <span class="divider-dot"></span>
+      </div>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-card">
+
+        <img
+          class="hero-logo"
+          src="assets/images/common/logo%20(1).jpg"
+          alt="">
+
+        <h1>
+          Crafted With
+          <br>
+          Elegance
+        </h1>
+
+        <p>
+          Timeless outfits made exclusively
+          for your moments.
+        </p>
+        <div class="btn-holder">
+          <button>
+            SHOP COLLECTION
+          </button>
+          <button class="fit-assistant-btn"
+                  (click)="openFitAssistant()">
+
+            ✨ Fit Assistant
+
+          </button>
+        </div>
+
+
+        <app-fit-assistant
+          *ngIf="showFitAssistant"
+          (closeModal)="closeFitAssistant()">
+        </app-fit-assistant>
+
+      </div>
+
+    </section>
+  </section>
+
+
+
+
+
+<section class="category-section fade-section" >
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-title" id="categoryTitle">
       <span>OUR COLLECTIONS</span>
       <h2>Shop by Category</h2>
     </div>
@@ -82,9 +169,9 @@
 </section>
 
 <!--featured products-->
-<section class="featured-products">
+<section class="featured-products fade-section" id="productTitle">
 <div class="container">
-  <div class="section-header">
+  <div class="section-header" >
     <div>
       <span>Our Picks</span>
       <h2>Signature Collections</h2>
@@ -139,9 +226,9 @@
   </div>
 </div>
 </section>
-<section class="subscribe">
+<section class="subscribe fade-section" id="subscribeTitle">
 <div class="container">
-  <div class="subscribe-content">
+  <div class="subscribe-content" >
     <span>JOIN OUR COMMUNITY</span>
     <h2>
       Get 10% Off <br>On Your First Order
@@ -166,7 +253,7 @@
   </div>
 </div>
 </section>
-<section class="points">
+<section class="points fade-section" id="points">
   <div class="container">
     <div class="point-card">
       <div class="icon">
@@ -209,3 +296,5 @@
     </div>
   </div>
 </section>
+
+</div>

@@ -2,15 +2,16 @@
 .header{
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   background: $bg-color;
   border-bottom: 1px solid $border-color;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+  padding-top: 2px;
   .container{
-    max-width: 1200px;
+    max-width: 100%;
     margin: 8px auto;
     padding: 0 24px;
-    height: 128px;
+    //height: 128px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,4 +168,5 @@
   .search{
     display: block;
   }
+
 }

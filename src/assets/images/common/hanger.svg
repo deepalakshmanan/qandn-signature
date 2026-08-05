@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 420 320">
+
+    <defs>
+
+        <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8B5A2B"/>
+            <stop offset="40%" stop-color="#A36A38"/>
+            <stop offset="70%" stop-color="#6D4321"/>
+            <stop offset="100%" stop-color="#4B2C18"/>
+        </linearGradient>
+
+        <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F5D46B"/>
+            <stop offset="100%" stop-color="#C99A2D"/>
+        </linearGradient>
+
+        <filter id="shadow">
+            <feDropShadow
+                dx="0"
+                dy="5"
+                stdDeviation="6"
+                flood-opacity=".25"/>
+        </filter>
+
+    </defs>
+
+    <!-- Hook -->
+    <g id="hook">
+
+        <path
+            d="
+            M210 18
+            C210 -8 250 -8 250 25
+            C250 55 220 60 220 82
+            "
+            fill="none"
+            stroke="url(#gold)"
+            stroke-width="10"
+            stroke-linecap="round"/>
+
+    </g>
+
+    <!-- Neck -->
+
+    <g id="neck">
+
+        <rect
+            x="202"
+            y="78"
+            width="16"
+            height="22"
+            rx="6"
+            fill="url(#wood)"/>
+
+    </g>
+
+    <!-- Wooden Hanger -->
+
+    <g id="hanger" filter="url(#shadow)">
+
+        <path
+            d="
+            M210 95
+
+            C190 105 160 122 118 152
+
+            C90 172 56 178 42 174
+
+            C26 170 18 156 18 144
+
+            C18 132 26 122 42 120
+
+            C64 118 90 126 115 136
+
+            L188 162
+
+            Q210 170 232 162
+
+            L305 136
+
+            C330 126 356 118 378 120
+
+            C394 122 402 132 402 144
+
+            C402 156 394 170 378 174
+
+            C364 178 330 172 302 152
+
+            C260 122 230 105 210 95
+            "
+            fill="url(#wood)"/>
+
+    </g>
+
+    <!-- Shine -->
+
+    <g id="shine" opacity=".15">
+
+        <path
+            d="
+            M120 142
+
+            C170 115 250 115 300 142
+            "
+            stroke="white"
+            stroke-width="4"
+            fill="none"
+            stroke-linecap="round"/>
+
+    </g>
+
+</svg>
