@@ -921,6 +921,56 @@
       width:100%;
       height:300px;
     }
+
+  .hero{
+    flex-direction:column;
+    height:1000px !important;
+  }
+  .hero-left{
+    width:100% !important;
+  }
+  .hero-right{
+    width:100% !important;
+  }
+  .divider{
+    display: none;
+  }
+  .hero-card {
+    width: 88%;
+    max-width: 340px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+  }
+
+
+  .hero-card h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .btn-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-holder button {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-top: 0 !important;
+  }
+
+  .fit-assistant-btn {
+    font-size: 0.9rem;
+  }
   }
 
 
